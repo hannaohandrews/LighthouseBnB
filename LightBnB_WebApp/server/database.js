@@ -57,7 +57,7 @@ const getUserWithId = function (option) {
 
 const addUser = function (option) {
   return pool.query (`
-  INSERT INTO users (name,email,password)
+  INSERT INTO users(name,email,password)
   VALUES ($1,$2,$3)
   RETURNING *;
   `,[option.name,option.email,option.password])
@@ -72,6 +72,9 @@ const addUser = function (option) {
     }
     );
 }
+
+// const getAllReservations = function(guest_id, limit = 10) {
+// };
 
 
 
